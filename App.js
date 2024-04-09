@@ -1,13 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
+import { ClerkProvider } from "@clerk/clerk-expo";
+import Constants from "expo-constants"
 import Login from './App/Screens/Login';
 import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Login />
-    </View>
+    <ClerkProvider publishableKey={Constants.expoConfig.extra.clerkPublishableKey}>
+    <SafeAreaView style={styles.container}>
+      <Text>Hello world!</Text>
+    </SafeAreaView>
+  </ClerkProvider>
   );
 }
 

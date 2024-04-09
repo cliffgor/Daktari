@@ -1,4 +1,4 @@
-{
+module.exports = {
   "expo": {
     "name": "Daktari",
     "slug": "Daktari",
@@ -25,6 +25,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    extra: {
+      clerkPublishableKey: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
+    },
   }
 }
