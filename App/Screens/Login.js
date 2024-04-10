@@ -3,6 +3,7 @@ import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'rea
 import Colors from '../../assets/Shared/Colors'
 import { ObjectFlags } from 'typescript'
 import React from 'react'
+import SignInWithOAuth from '../Components/SignInWithOAuth'
 import app from '../../assets/icon.png'
 
 export default function Login() {
@@ -13,9 +14,7 @@ export default function Login() {
                 <Text style={styles.heading}>Daktari</Text>
                 <Text>Your Appointment booking App</Text>
                 <Text style={{ textAlign: 'center', marginTop: 20 }}>Book Appointments faster</Text>
-                <TouchableOpacity onPress={() =>console.log("Finya")} style={styles.loginView}>
-                    <Text style={{ fontSize: 17, color: Colors.white }}> Login with Google</Text>
-                </TouchableOpacity>
+                <SignInWithOAuth />
             </View>
         </View>
     )
