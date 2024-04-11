@@ -4,21 +4,22 @@ import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Constants from "expo-constants"
 import Home from "./App/Screens/Home";
 import Login from './App/Screens/Login';
-import SignInWithOAuth from "./App/Components/SignInWithOAuth";
+import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from 'expo-status-bar';
+import TabNavigation from "./App/Navigations/TabNavigation";
 
 export default function App() {
   return (
     <ClerkProvider publishableKey={Constants.expoConfig.extra.clerkPublishableKey}>
-    <SafeAreaView style={styles.container}>
-    <SignedIn>
-          <Home />
+        <SignedIn>
+          <NavigationContainer >
+            <TabNavigation/>
+          </NavigationContainer>
         </SignedIn>
         <SignedOut>
-        <Login />
+          <Login />
         </SignedOut>
-    </SafeAreaView>
-  </ClerkProvider>
+    </ClerkProvider>
   );
 }
 
@@ -27,6 +28,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
   },
 });
